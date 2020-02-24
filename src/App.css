@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: #111;
+  color: #eee;
+  font-family: Menlo, Noto Mono;
+}
+
+div {
+  display: block;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer {
+  height: 50px;
+}
