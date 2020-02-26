@@ -25,34 +25,33 @@ footer {
 .person-detected {
   border: 1px solid #0ac;
   font-size: 2vw;
-  height: 90%;
+  height: 100%;
   left: 0;
   list-style: none;
   position: fixed;
   text-align: center;
-  top: 1em;
   width: 74%;
 }
 
 .person-unknown {
   border: 1px solid #0ac;
-  font-size: 2vw;
-  height: 90%;
+  font-size: 1vw;
+  height: 100%;
   left: 75%;
   list-style: none;
   position: fixed;
   text-align: center;
-  top: 1em;
   width: 24%;
 }
 
 .person-item {
-  width: 30%;
+  width: 45%;
+  padding: 0.5em;
   float: left;
 }
 
 .person-photo {
-  width: 100%;
+  width: 80%;
 }
 
 .text_normal {
