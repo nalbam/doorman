@@ -23,6 +23,8 @@ class App extends Component {
   reloaded(res) {
     let items = res.sort(this.compare).reverse();
 
+    console.log(items)
+
     this.setState({ items: items });
   }
 

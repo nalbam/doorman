@@ -17,6 +17,12 @@ class App extends Component {
         <div className='App-body'>
           <UserList user_type="unknown" />
         </div>
+        <div className='App-body'>
+          <UserList user_type="trained" />
+        </div>
+        <div className='App-body'>
+          <UserList user_type="detected" />
+        </div>
       </Fragment>
     );
   }
