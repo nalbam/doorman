@@ -11,6 +11,11 @@ class App extends Component {
 
   componentDidMount() {
     this.getUsers();
+    this.intervalId = setInterval(this.getUsers.bind(this), 3000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalId);
   }
 
   getUsers = async () => {
@@ -46,12 +51,7 @@ class App extends Component {
 
     return (
       <Fragment>
-        <div className='lb-items'>
-          <div className='lb-header lb-rank0'>
-            <div>Photo</div>
-            <div>Realname</div>
-            <div>Username</div>
-          </div>
+        <div className='person-items'>
           {userList}
         </div>
       </Fragment>

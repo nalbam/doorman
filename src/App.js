@@ -9,19 +9,11 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <header className='App-header'>
-          <div className='logo'>
-            <img alt='doorman' src='https://deepracer-logos.s3.ap-northeast-2.amazonaws.com/logo_deepracer.png' />
-          </div>
-        </header>
-        <div className='App-body'>
-          <UserList user_type="unknown" />
-        </div>
-        <div className='App-body'>
-          <UserList user_type="trained" />
-        </div>
-        <div className='App-body'>
+        <div className='person-detected'>
           <UserList user_type="detected" />
+        </div>
+        <div className='person-unknown'>
+          <UserList user_type="unknown" />
         </div>
       </Fragment>
     );
