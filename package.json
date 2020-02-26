@@ -1,6 +1,6 @@
 {
   "name": "doorman",
-  "version": "v0.1.0",
+  "version": "v0.1.1",
   "private": true,
   "dependencies": {
     "aws-amplify": "^2.2.5",
