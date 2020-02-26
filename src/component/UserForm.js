@@ -66,6 +66,8 @@ class App extends Component {
       // this.popup('Saved!');
       this.popupCmp.current.start(3000, 'Saved!');
 
+      this.props.history.push(`/`);
+
     } catch (err) {
       console.log(`postUser: ${JSON.stringify(err, null, 2)}`);
 
