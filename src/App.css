@@ -32,6 +32,7 @@ footer {
   height: 99%;
   left: 0;
   list-style: none;
+  overflow: scroll;
   position: fixed;
   text-align: center;
   width: 74%;
@@ -43,6 +44,7 @@ footer {
   height: 99%;
   left: 75%;
   list-style: none;
+  overflow: scroll;
   position: fixed;
   text-align: center;
   width: 24%;
