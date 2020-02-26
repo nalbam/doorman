@@ -5,9 +5,9 @@ class App extends Component {
     return (
       <Fragment>
         <div className='lb-row'>
-          <div><img src={this.props.item.logo} alt='logo' className='icon-logo' /></div>
-          <div><a href={path1}>{this.props.item.title}</a></div>
-          <div><a href={path2}>{this.props.item.league}</a></div>
+          <div><img src={this.props.item.image_url} alt='logo' className='icon-logo' /></div>
+          <div>{this.props.item.real_name}</div>
+          <div>{this.props.item.user_name}</div>
         </div>
       </Fragment>
     );

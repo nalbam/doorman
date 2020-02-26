@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import AppProvider from './context/AppProvider'
 
 import App from './App';
-import Timer from './pages/Timer'
+import ManageUser from './pages/ManageUser'
 
 import Amplify, { Analytics } from 'aws-amplify'
 import awsconfig from './aws-exports'
@@ -24,7 +24,7 @@ const routing = (
         <Router>
             <Switch>
                 <Route exact path='/' component={App} />
-                <Route path='/timer' component={Timer} />
+                <Route path='/users/:user_id' component={ManageUser} />
                 <Route component={App} />
             </Switch>
         </Router>

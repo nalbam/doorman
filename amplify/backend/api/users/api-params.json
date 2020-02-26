@@ -1,0 +1,34 @@
+{
+    "paths": [
+        {
+            "name": "/items",
+            "lambdaFunction": "users",
+            "privacy": {
+                "open": true
+            }
+        }
+    ],
+    "resourceName": "users",
+    "apiName": "users",
+    "functionArns": [
+        {
+            "lambdaFunction": "users"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-doorman-demo-160249-authRole",
+        "unAuthRoleName": "amplify-doorman-demo-160249-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "users",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

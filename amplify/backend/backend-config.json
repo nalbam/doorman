@@ -1,16 +1,41 @@
 {
-	"auth": {
-		"doormane3bdc328": {
-			"service": "Cognito",
-			"providerPlugin": "awscloudformation",
-			"dependsOn": [],
-			"customAuth": false
+	"storage": {
+		"users": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation"
 		}
 	},
-	"analytics": {
-		"doorman": {
-			"service": "Pinpoint",
-			"providerPlugin": "awscloudformation"
+	"function": {
+		"users": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "storage",
+					"resourceName": "users",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		}
+	},
+	"api": {
+		"users": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "users",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
 		}
 	}
 }

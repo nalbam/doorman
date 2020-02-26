@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 
 import { API } from 'aws-amplify'
 
-import LeagueItem from './LeagueItem';
+import UserItem from './UserItem';
 
 class App extends Component {
   state = {
@@ -10,11 +10,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.getLeagues();
+    this.getUsers();
   }
 
-  getLeagues = async () => {
-    const res = await API.get('leagues', '/items/all');
+  getUsers = async () => {
+    const res = await API.get('users', '/items/' + this.props.user_type);
     if (res && res.length > 0) {
       this.reloaded(res);
     }
@@ -27,8 +27,8 @@ class App extends Component {
   }
 
   compare(a, b) {
-    let a1 = a.registered;
-    let b1 = b.registered;
+    let a1 = a.latest;
+    let b1 = b.latest;
     if (a1 < b1) {
       return -1;
     } else if (a1 > b1) {
@@ -38,19 +38,19 @@ class App extends Component {
   }
 
   render() {
-    const leagueList = this.state.items.map(
-      (item, index) => (<LeagueItem key={index} item={item} pathPrefix={this.props.pathPrefix} />)
+    const userList = this.state.items.map(
+      (item, index) => (<UserItem key={index} item={item} pathPrefix={this.props.pathPrefix} />)
     );
 
     return (
       <Fragment>
         <div className='lb-items'>
           <div className='lb-header lb-rank0'>
-            <div>Logo</div>
-            <div>Title</div>
-            <div>Code</div>
+            <div>Photo</div>
+            <div>Realname</div>
+            <div>Username</div>
           </div>
-          {leagueList}
+          {userList}
         </div>
       </Fragment>
     );

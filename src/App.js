@@ -1,6 +1,9 @@
 import React, { Component, Fragment } from 'react';
 
+import UserList from './component/UserList';
+
 import './App.css';
+import './pop.css';
 
 class App extends Component {
   render() {
@@ -11,8 +14,8 @@ class App extends Component {
             <img alt='doorman' src='https://deepracer-logos.s3.ap-northeast-2.amazonaws.com/logo_deepracer.png' />
           </div>
         </header>
-        <div className='center'>
-          <a href='/manage' className='btn-link'>Manage</a>
+        <div className='App-body'>
+          <UserList user_type="unknown" />
         </div>
       </Fragment>
     );
