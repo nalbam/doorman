@@ -71,7 +71,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-doorman-demo-160249-deployment",
-					"S3Key": "amplify-builds/users-34494d51696678616145-build.zip"
+					"S3Key": "amplify-builds/users-39685a724c46506c6276-build.zip"
 				}
 			}
 		},
@@ -81,12 +81,12 @@
 				"RoleName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
-						"doormanLambdaRole6224dcd8",
+						"doormanLambdaRole1eab8d6c",
 						{
 							"Fn::Join": [
 								"",
 								[
-									"doormanLambdaRole6224dcd8",
+									"doormanLambdaRole1eab8d6c",
 									"-",
 									{
 										"Ref": "env"

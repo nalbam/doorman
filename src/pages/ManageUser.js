@@ -14,7 +14,7 @@ class App extends Component {
           <Authenticator usernameAttributes='email' />
         </header>
         <div className='App-body'>
-          <UserForm league={this.props.match.params.user_id} />
+          <UserForm user_id={this.props.match.params.user_id} />
         </div>
       </Fragment>
     );

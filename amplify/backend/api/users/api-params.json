@@ -4,7 +4,17 @@
             "name": "/items",
             "lambdaFunction": "users",
             "privacy": {
-                "open": true
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/GET"
+                ]
             }
         }
     ],
@@ -16,8 +26,8 @@
         }
     ],
     "privacy": {
-        "auth": 0,
-        "unauth": 0,
+        "auth": 1,
+        "unauth": 1,
         "authRoleName": "amplify-doorman-demo-160249-authRole",
         "unAuthRoleName": "amplify-doorman-demo-160249-unauthRole"
     },

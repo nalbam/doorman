@@ -59,27 +59,6 @@ const convertUrlType = (param, type) => {
  ********************************/
 
 app.get(path + hashKeyPath, function (req, res) {
-  // var condition = {}
-  // condition[partitionKeyName] = {
-  //   ComparisonOperator: 'EQ'
-  // }
-
-  // if (userIdPresent && req.apiGateway) {
-  //   condition[partitionKeyName]['AttributeValueList'] = [req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH];
-  // } else {
-  //   try {
-  //     condition[partitionKeyName]['AttributeValueList'] = [convertUrlType(req.params[partitionKeyName], partitionKeyType)];
-  //   } catch (err) {
-  //     res.statusCode = 500;
-  //     res.json({ error: 'Wrong column type ' + err });
-  //   }
-  // }
-
-  // let queryParams = {
-  //   TableName: tableName,
-  //   KeyConditions: condition
-  // }
-
   console.log(`scan: ${JSON.stringify(req.params)}`);
 
   let image_type = req.params['user_id'];
@@ -127,8 +106,10 @@ app.get(path + '/object' + hashKeyPath + sortKeyPath, function (req, res) {
     Key: params
   }
 
+  console.log(`get: ${JSON.stringify(getItemParams)}`);
   dynamodb.get(getItemParams, (err, data) => {
     if (err) {
+      console.log('get: ' + err.message);
       res.statusCode = 500;
       res.json({ error: 'Could not load items: ' + err.message });
     } else {
@@ -141,96 +122,41 @@ app.get(path + '/object' + hashKeyPath + sortKeyPath, function (req, res) {
   });
 });
 
-
 /************************************
 * HTTP put method for insert object *
 *************************************/
 
 app.put(path, function (req, res) {
-
-  if (userIdPresent) {
-    req.body['userId'] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
+  var params = {};
+  try {
+    params = {
+      user_id: req.body.user_id,
+    };
+  } catch (err) {
+    res.statusCode = 500;
+    res.json({ error: 'Wrong column type ' + err });
   }
 
-  let putItemParams = {
+  let upateItemParams = {
     TableName: tableName,
-    Item: req.body
-  }
-  dynamodb.put(putItemParams, (err, data) => {
+    Key: params,
+    UpdateExpression: 'SET user_name = :user_name, real_name = :real_name',
+    ExpressionAttributeValues: {
+      ':user_name': req.body.user_name,
+      ':real_name': req.body.real_name,
+    },
+  };
+
+  console.log(`put: ${JSON.stringify(upateItemParams)}`);
+  dynamodb.update(upateItemParams, (err, data) => {
     if (err) {
+      console.log('put: ' + err.message);
       res.statusCode = 500;
       res.json({ error: err, url: req.url, body: req.body });
     } else {
       res.json({ success: 'put call succeed!', url: req.url, data: data })
     }
   });
-});
-
-/************************************
-* HTTP post method for insert object *
-*************************************/
-
-app.post(path, function (req, res) {
-
-  if (userIdPresent) {
-    req.body['userId'] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
-  }
-
-  let putItemParams = {
-    TableName: tableName,
-    Item: req.body
-  }
-  dynamodb.put(putItemParams, (err, data) => {
-    if (err) {
-      res.statusCode = 500;
-      res.json({ error: err, url: req.url, body: req.body });
-    } else {
-      res.json({ success: 'post call succeed!', url: req.url, data: data })
-    }
-  });
-});
-
-/**************************************
-* HTTP remove method to delete object *
-***************************************/
-
-app.delete(path + '/object' + hashKeyPath + sortKeyPath, function (req, res) {
-  var params = {};
-  if (userIdPresent && req.apiGateway) {
-    params[partitionKeyName] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
-  } else {
-    params[partitionKeyName] = req.params[partitionKeyName];
-    try {
-      params[partitionKeyName] = convertUrlType(req.params[partitionKeyName], partitionKeyType);
-    } catch (err) {
-      res.statusCode = 500;
-      res.json({ error: 'Wrong column type ' + err });
-    }
-  }
-  if (hasSortKey) {
-    try {
-      params[sortKeyName] = convertUrlType(req.params[sortKeyName], sortKeyType);
-    } catch (err) {
-      res.statusCode = 500;
-      res.json({ error: 'Wrong column type ' + err });
-    }
-  }
-
-  let removeItemParams = {
-    TableName: tableName,
-    Key: params
-  }
-  dynamodb.delete(removeItemParams, (err, data) => {
-    if (err) {
-      res.statusCode = 500;
-      res.json({ error: err, url: req.url });
-    } else {
-      res.json({ url: req.url, data: data });
-    }
-  });
-});
-app.listen(3000, function () {
-  console.log("App started")
 });
 
 // Export the app object. When executing the application local this does nothing. However,

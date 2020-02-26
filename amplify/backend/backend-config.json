@@ -45,7 +45,7 @@
 		}
 	},
 	"auth": {
-		"doormanc1b61b5c": {
+		"doorman949fea67": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": [],

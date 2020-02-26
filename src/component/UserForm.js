@@ -24,11 +24,11 @@ class App extends Component {
   }
 
   getUser = async () => {
+    console.log(`getUser: ${this.props.user_id}`);
+
     if (!this.props.user_id) {
       return;
     }
-
-    console.log(`getUser: ${this.props.user_id}`);
 
     const res = await API.get('users', `/items/object/${this.props.user_id}`);
 
@@ -57,7 +57,7 @@ class App extends Component {
 
       console.log(`postUser: ${JSON.stringify(body, null, 2)}`);
 
-      const res = await API.post('users', '/items', {
+      const res = await API.put('users', '/items', {
         body: body
       });
 
@@ -65,8 +65,6 @@ class App extends Component {
 
       // this.popup('Saved!');
       this.popupCmp.current.start(3000, 'Saved!');
-
-      this.props.history.push(`/`);
 
     } catch (err) {
       console.log(`postUser: ${JSON.stringify(err, null, 2)}`);
@@ -121,16 +119,6 @@ class App extends Component {
 
   handleChange = (e) => {
     let v = e.target.value;
-
-    switch (e.target.name) {
-      case 'user_name':
-        document.getElementById('user_name').innerText = v;
-        break;
-      case 'real_name':
-        document.getElementById('real_name').innerText = v;
-        break;
-      default:
-    }
 
     this.setState({
       [e.target.name]: v,
