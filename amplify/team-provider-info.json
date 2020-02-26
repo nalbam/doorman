@@ -1,0 +1,20 @@
+{
+    "demo": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-doorman-demo-142738-authRole",
+            "UnauthRoleArn": "arn:aws:iam::122547080666:role/amplify-doorman-demo-142738-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::122547080666:role/amplify-doorman-demo-142738-authRole",
+            "Region": "ap-northeast-2",
+            "DeploymentBucketName": "amplify-doorman-demo-142738-deployment",
+            "UnauthRoleName": "amplify-doorman-demo-142738-unauthRole",
+            "StackName": "amplify-doorman-demo-142738",
+            "StackId": "arn:aws:cloudformation:ap-northeast-2:122547080666:stack/amplify-doorman-demo-142738/bdaa4380-5858-11ea-9441-0a8876b4c718",
+            "AmplifyAppId": "d2vjp8ednzlkdq"
+        },
+        "categories": {
+            "auth": {
+                "doormane3bdc328": {}
+            }
+        }
+    }
+}

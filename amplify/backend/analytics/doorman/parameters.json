@@ -1,0 +1,20 @@
+{
+    "appName": "doorman",
+    "roleName": "pinpointLambdaRole5baf1083",
+    "cloudWatchPolicyName": "cloudWatchPolicy5baf1083",
+    "pinpointPolicyName": "pinpointPolicy5baf1083",
+    "authPolicyName": "pinpoint_amplify_5baf1083",
+    "unauthPolicyName": "pinpoint_amplify_5baf1083",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

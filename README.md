@@ -15,7 +15,6 @@ amplify auth add
 amplify analytics add
 amplify hosting add
 
-amplify storage add
 amplify api add
 
 amplify push
