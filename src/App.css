@@ -54,6 +54,53 @@ footer {
   width: 80%;
 }
 
+.lb-submit {
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+.lb-submit .lb-row {
+  display: flex;
+  width: 100%;
+  background: linear-gradient(90deg, #456 0, #326);
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.lb-submit .lb-row>div {
+  font-size: 32px;
+  padding: 15px 30px;
+  text-align: center;
+}
+
+.lb-submit .lb-row>div:nth-child(1) {
+  margin-top: 10px;
+  min-width: 100px;
+  width: 15%;
+}
+
+.lb-submit .lb-row>div:nth-child(2) {
+  margin-right: auto;
+  text-align: left;
+  width: 85%;
+}
+
+.lb-submit .lb-row input {
+  background-color: transparent;
+  border-radius: 3px;
+  font-size: 32px;
+  height: 40px;
+  line-height: 20px;
+  padding: 4px 10px;
+  margin-right: 20px;
+}
+
+.lb-submit .lb-row input:focus {
+  border: 1px solid #0ac;
+  box-shadow: 0 0 0 1px #0ac;
+  outline: 0;
+}
+
 .text_normal {
   color: #fff;
   border: 1px solid #aaa;
