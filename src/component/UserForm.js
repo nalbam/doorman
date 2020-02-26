@@ -16,6 +16,7 @@ class App extends Component {
     user_name: '',
     real_name_class: 'text_normal width_80',
     real_name: '',
+    image_url: '',
   }
 
   componentDidMount() {
@@ -37,6 +38,7 @@ class App extends Component {
       this.setState({
         user_name: res.user_name,
         real_name: res.real_name,
+        image_url: res.image_url,
       });
 
       this.validateAll();
@@ -150,6 +152,9 @@ class App extends Component {
   render() {
     return (
       <Fragment>
+        <div className='logo'>
+          <img id='logo' alt='deepracer' src={this.state.image_url} />
+        </div>
         <form onSubmit={this.handleSubmit}>
           <div className='lb-submit'>
             <div className='lb-row'>

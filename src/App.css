@@ -22,10 +22,14 @@ footer {
   height: 50px;
 }
 
+.auth {
+  color: #555;
+}
+
 .person-detected {
   border: 1px solid #0ac;
   font-size: 2vw;
-  height: 100%;
+  height: 99%;
   left: 0;
   list-style: none;
   position: fixed;
@@ -36,7 +40,7 @@ footer {
 .person-unknown {
   border: 1px solid #0ac;
   font-size: 1vw;
-  height: 100%;
+  height: 99%;
   left: 75%;
   list-style: none;
   position: fixed;
@@ -52,6 +56,19 @@ footer {
 
 .person-photo {
   width: 80%;
+}
+
+.logo {
+  display: block;
+  height: 300px;
+  line-height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  text-align: center;
+}
+
+.logo img {
+  height: 100%;
 }
 
 .lb-submit {

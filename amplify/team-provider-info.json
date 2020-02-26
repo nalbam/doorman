@@ -10,6 +10,11 @@
             "StackName": "amplify-doorman-demo-160249",
             "StackId": "arn:aws:cloudformation:ap-northeast-1:122547080666:stack/amplify-doorman-demo-160249/01228750-5866-11ea-90d1-0e2825cd3a94",
             "AmplifyAppId": "d3cmml6fkwxmg8"
+        },
+        "categories": {
+            "auth": {
+                "doormanc1b61b5c": {}
+            }
         }
     }
 }
