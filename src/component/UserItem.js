@@ -7,8 +7,8 @@ class App extends Component {
     return (
       <Fragment>
         <div className='person-item'>
-          <div className='person-name'>{this.props.item.real_name}</div>
           <div><a href={href}><img src={this.props.item.image_url} alt={this.props.item.user_name} className='person-photo' /></a></div>
+          <div className='person-name'>{this.props.item.real_name}</div>
         </div>
       </Fragment>
     );
