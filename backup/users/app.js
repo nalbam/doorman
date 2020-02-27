@@ -62,15 +62,17 @@ app.get(path + hashKeyPath, function (req, res) {
   console.log(`scan: ${JSON.stringify(req.params)}`);
 
   let image_type = req.params['user_id'];
+  let latest = Date.now() - (60 * 60 * 1000);
 
   let queryParams = {
     TableName: tableName,
-    FilterExpression: '#image_type = :image_type',
-    ExpressionAttributeNames: {
-      '#image_type': 'image_type',
-    },
+    FilterExpression: 'image_type = :image_type and latest > :latest',
+    // ExpressionAttributeNames: {
+    //   '#image_type': 'image_type',
+    // },
     ExpressionAttributeValues: {
-      ':image_type': image_type
+      ':image_type': image_type,
+      ':latest': latest,
     },
   }
 
@@ -137,13 +139,17 @@ app.put(path, function (req, res) {
     res.json({ error: 'Wrong column type ' + err });
   }
 
+  let latest = Date.now();
+
   let upateItemParams = {
     TableName: tableName,
     Key: params,
-    UpdateExpression: 'SET user_name = :user_name, real_name = :real_name',
+    UpdateExpression: 'SET user_name = :user_name, real_name = :real_name, image_type = :image_type, latest = :latest',
     ExpressionAttributeValues: {
       ':user_name': req.body.user_name,
       ':real_name': req.body.real_name,
+      ':image_type': 'trained',
+      ':latest': latest,
     },
   };
 
