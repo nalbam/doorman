@@ -2,7 +2,9 @@ import React, { Component, Fragment } from 'react';
 
 import { API } from 'aws-amplify'
 
-import UserItem from './UserItem';
+import StackGrid from "react-stack-grid";
+
+import GridItem from './GridItem';
 
 class App extends Component {
   state = {
@@ -46,14 +48,16 @@ class App extends Component {
 
   render() {
     const list = this.state.items.map(
-      (item, index) => (<UserItem key={index} item={item} pathPrefix={this.props.pathPrefix} />)
+      (item, index) => (<GridItem key={index} item={item} pathPrefix={this.props.pathPrefix} />)
     );
 
     return (
       <Fragment>
-        <div className='person-items'>
+        <StackGrid
+          columnWidth={150}
+        >
           {list}
-        </div>
+        </StackGrid>
       </Fragment>
     );
   }

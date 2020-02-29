@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 
-import UserList from './component/UserList';
+import GridList from './component/GridList';
 
 import './App.css';
 
@@ -9,10 +9,10 @@ class App extends Component {
     return (
       <Fragment>
         <div className='person-detected'>
-          <UserList user_type="detected" />
+          <GridList user_type="detected" />
         </div>
         <div className='person-unknown'>
-          <UserList user_type="unknown" />
+          <GridList user_type="unknown" />
         </div>
       </Fragment>
     );
