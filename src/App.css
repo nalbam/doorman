@@ -29,7 +29,7 @@ footer {
 .person-detected {
   border: 1px solid #0ac;
   font-size: 2vw;
-  height: 99%;
+  width: 45%;
   left: 0;
   list-style: none;
   overflow-x: hidden;
@@ -42,7 +42,7 @@ footer {
 .person-unknown {
   border: 1px solid #0ac;
   font-size: 1vw;
-  height: 99%;
+  width: 45%;
   left: 75%;
   list-style: none;
   overflow-x: hidden;
