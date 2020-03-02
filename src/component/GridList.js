@@ -53,9 +53,7 @@ class App extends Component {
 
     return (
       <Fragment>
-        <StackGrid
-          columnWidth={150}
-        >
+        <StackGrid columnWidth="50%">
           {list}
         </StackGrid>
       </Fragment>

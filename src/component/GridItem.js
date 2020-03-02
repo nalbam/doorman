@@ -6,9 +6,9 @@ class App extends Component {
 
     return (
       <Fragment>
-        <li>
-          <div><a href={href}><img src={this.props.item.image_url} alt={this.props.item.user_name} /></a></div>
-          <div>{this.props.item.real_name}</div>
+        <li className='grid-item'>
+          <div><a href={href}><img src={this.props.item.image_url} alt={this.props.item.user_name} className='grid-photo' /></a></div>
+          <div className='grid-name'>{this.props.item.real_name}</div>
         </li>
       </Fragment>
     );

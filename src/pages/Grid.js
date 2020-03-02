@@ -1,17 +1,17 @@
 import React, { Component, Fragment } from 'react';
 
-import GridList from './component/GridList';
+import GridList from '../component/GridList';
 
-import './App.css';
+import './grid.css';
 
 class App extends Component {
   render() {
     return (
       <Fragment>
-        <div className='person-detected'>
+        <div className='grid-detected'>
           <GridList user_type="detected" />
         </div>
-        <div className='person-unknown'>
+        <div className='grid-unknown'>
           <GridList user_type="unknown" />
         </div>
       </Fragment>

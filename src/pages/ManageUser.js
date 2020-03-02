@@ -6,8 +6,6 @@ import signUpConfig from '../config/signUpConfig'
 
 import UserForm from '../component/UserForm';
 
-import './pop.css';
-
 class App extends Component {
   render() {
     return (

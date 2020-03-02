@@ -29,7 +29,7 @@ footer {
 .person-detected {
   border: 1px solid #0ac;
   font-size: 2vw;
-  width: 45%;
+  height: 99%;
   left: 0;
   list-style: none;
   overflow-x: hidden;
@@ -42,7 +42,7 @@ footer {
 .person-unknown {
   border: 1px solid #0ac;
   font-size: 1vw;
-  width: 45%;
+  height: 99%;
   left: 75%;
   list-style: none;
   overflow-x: hidden;
@@ -54,17 +54,17 @@ footer {
 
 .person-item {
   width: 45%;
-  padding: 0.5em;
   float: left;
+  padding: 5px;
 }
 
 .person-photo {
-  width: 80%;
+  width: 100%;
 }
 
 .person-name {
   background-color: #456;
-  position: absolute;
+  margin-bottom: 1vw;
 }
 
 .logo {
