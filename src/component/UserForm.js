@@ -16,7 +16,7 @@ class App extends Component {
     user_name: '',
     real_name_class: 'text_normal width_80',
     real_name: '',
-    image_url: '',
+    image_url: '/avatar.png',
   }
 
   componentDidMount() {
