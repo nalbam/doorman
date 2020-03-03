@@ -62,7 +62,7 @@ app.get(path + hashKeyPath, function (req, res) {
   console.log(`scan: ${JSON.stringify(req.params)}`);
 
   let image_type = req.params['user_id'];
-  let latest = Date.now() - (60 * 60 * 1000);
+  let latest = Date.now() - (15 * 60 * 1000);
 
   let queryParams = {
     TableName: tableName,
