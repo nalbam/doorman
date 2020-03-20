@@ -7,6 +7,14 @@ import StackGrid from "react-stack-grid";
 import GridItem from './GridItem';
 
 class App extends Component {
+  // constructor(props) {
+  //   super(props);
+
+  //   // this.getUsers();
+
+  //   // this.intervalId = setInterval(this.getUsers.bind(this), 3000);
+  // }
+
   state = {
     items: [],
   }

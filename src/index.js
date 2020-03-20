@@ -25,7 +25,6 @@ const routing = (
         <Router>
             <Switch>
                 <Route exact path='/' component={Grid} />
-                <Route path='/grid' component={Grid} />
                 <Route path='/users/:user_id' component={ManageUser} />
                 <Route component={App} />
             </Switch>

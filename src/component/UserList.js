@@ -5,14 +5,22 @@ import { API } from 'aws-amplify'
 import UserItem from './UserItem';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.getUsers();
+
+    this.intervalId = setInterval(this.getUsers.bind(this), 3000);
+  }
+
   state = {
     items: [],
   }
 
-  componentDidMount() {
-    this.getUsers();
-    this.intervalId = setInterval(this.getUsers.bind(this), 3000);
-  }
+  // componentDidMount() {
+  //   this.getUsers();
+  //   this.intervalId = setInterval(this.getUsers.bind(this), 3000);
+  // }
 
   componentWillUnmount() {
     clearInterval(this.intervalId);

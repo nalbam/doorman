@@ -29,12 +29,18 @@
 }
 
 .grid-detected .grid-photo {
-  width: 100%;
+  width: 36vw;
+}
+
+.grid-detected .grid-thermal {
+  position: absolute;
+  width: 10vw;
 }
 
 .grid-detected .grid-name {
   background-color: #456;
   margin-bottom: 1vw;
+  width: 36vw;
 }
 
 .grid-unknown .grid-item {
@@ -42,10 +48,17 @@
 }
 
 .grid-unknown .grid-photo {
-  width: 100%;
+  width: 10vw;
+}
+
+.grid-unknown .grid-thermal {
+  position: absolute;
+  visibility: hidden;
+  width: 5vw;
 }
 
 .grid-unknown .grid-name {
   background-color: #456;
   margin-bottom: 0.5vw;
+  width: 10vw;
 }

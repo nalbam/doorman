@@ -62,6 +62,10 @@ footer {
   width: 100%;
 }
 
+.person-thermal {
+  position: absolute;
+}
+
 .person-name {
   background-color: #456;
   margin-bottom: 1vw;
