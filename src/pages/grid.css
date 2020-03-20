@@ -25,7 +25,8 @@
 }
 
 .grid-detected .grid-item {
-  padding: 5px;
+  padding-top: 0.5vw;
+  padding-left: 0.5vw;
 }
 
 .grid-detected .grid-photo {
@@ -44,7 +45,8 @@
 }
 
 .grid-unknown .grid-item {
-  padding: 5px;
+  padding-top: 0.5vw;
+  padding-left: 0.5vw;
 }
 
 .grid-unknown .grid-photo {
