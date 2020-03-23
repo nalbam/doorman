@@ -39,8 +39,12 @@ footer {
   width: 41vw;
 }
 
+.grid-visited>li:nth-child(1) {
+  padding-top: 0.5vw;
+}
+
 .grid-visited .grid-item {
-  padding: 0.5vw;
+  padding-left: 0.5vw;
 }
 
 .grid-visited .grid-photo {
@@ -54,8 +58,7 @@ footer {
 
 .grid-visited .grid-name {
   background-color: #456;
-  margin-bottom: 1vw;
-  visibility: hidden;
+  display: none;
   width: 40vw;
 }
 
@@ -72,9 +75,13 @@ footer {
   width: 57vw;
 }
 
+.grid-history>li:nth-child(1) {
+  padding-top: 0.5vw;
+}
+
 .grid-history .grid-item {
   display: flex;
-  padding: 0.5vw;
+  padding-left: 0.5vw;
 }
 
 .grid-history .grid-photo {
@@ -107,8 +114,12 @@ footer {
   width: 75vw;
 }
 
+.grid-detected>li:nth-child(1) {
+  padding-top: 0.5vw;
+}
+
 .grid-detected .grid-item {
-  padding: 0.5vw;
+  padding-left: 0.5vw;
 }
 
 .grid-detected .grid-photo {
@@ -139,8 +150,12 @@ footer {
   width: 23vw;
 }
 
+.grid-unknown>li:nth-child(1) {
+  padding-top: 0.5vw;
+}
+
 .grid-unknown .grid-item {
-  padding: 0.5vw;
+  padding-left: 0.5vw;
 }
 
 .grid-unknown .grid-photo {

@@ -18,10 +18,19 @@ class App extends Component {
 
     if (this.props.item.thermal === 'o') {
       let thermal_url = '';
-      if (this.props.user_type === 'detected') {
-        thermal_url = this.props.item.image_url.replace(/detected\/[a-z0-9-]+/gi, 'thermal');
+      let item_count = this.props.item.image_url.split('/').length;
+      if (item_count > 5) {
+        if (this.props.user_type === 'detected') {
+          thermal_url = this.props.item.image_url.replace(/detected\/[a-z0-9-]+/gi, 'thermal');
+        } else {
+          thermal_url = this.props.item.image_url.replace(/unknown\/[a-z0-9-]+/gi, 'thermal');
+        }
       } else {
-        thermal_url = this.props.item.image_url.replace(/unknown\/[a-z0-9-]+/gi, 'thermal');
+        if (this.props.user_type === 'detected') {
+          thermal_url = this.props.item.image_url.replace(/detected/gi, 'thermal');
+        } else {
+          thermal_url = this.props.item.image_url.replace(/unknown/gi, 'thermal');
+        }
       }
       if (thermal_url !== '') {
         thermal = <div><img src={thermal_url} alt={this.props.item.visited} className='grid-thermal' /></div>
