@@ -27,8 +27,8 @@ const routing = (
             <Switch>
                 <Route exact path='/' component={Visitors} />
                 <Route path='/visitors' component={Visitors} />
-                <Route path='/users' component={Users} />
                 <Route path='/users/:user_id' component={UserForm} />
+                <Route path='/users' component={Users} />
                 <Route component={App} />
             </Switch>
         </Router>
