@@ -21,10 +21,6 @@ class App extends Component {
     image_url: '/avatar.png',
   }
 
-  // componentDidMount() {
-  //   this.getUser();
-  // }
-
   getUser = async () => {
     console.log(`getUser: ${this.props.user_id}`);
 

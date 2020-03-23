@@ -26,6 +26,38 @@ footer {
   color: #555;
 }
 
+.grid-visited {
+  border: 1px solid #0ac;
+  font-size: 2vw;
+  height: 99%;
+  left: 0;
+  list-style: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  overflow: scroll;
+  position: fixed;
+  width: 41vw;
+}
+
+.grid-visited .grid-item {
+  padding: 0.5vw;
+}
+
+.grid-visited .grid-photo {
+  width: 40vw;
+}
+
+.grid-visited .grid-thermal {
+  position: absolute;
+  width: 10vw;
+}
+
+.grid-visited .grid-name {
+  background-color: #456;
+  margin-bottom: 1vw;
+  width: 40vw;
+}
+
 .grid-detected {
   border: 1px solid #0ac;
   font-size: 2vw;
@@ -39,22 +71,8 @@ footer {
   width: 75vw;
 }
 
-.grid-unknown {
-  border: 1px solid #0ac;
-  font-size: 1vw;
-  height: 99%;
-  left: 76vw;
-  list-style: none;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  overflow: scroll;
-  position: fixed;
-  width: 23vw;
-}
-
 .grid-detected .grid-item {
-  padding-top: 0.5vw;
-  padding-left: 0.5vw;
+  padding: 0.5vw;
 }
 
 .grid-detected .grid-photo {
@@ -72,9 +90,21 @@ footer {
   width: 36vw;
 }
 
+.grid-unknown {
+  border: 1px solid #0ac;
+  font-size: 1vw;
+  height: 99%;
+  left: 76vw;
+  list-style: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  overflow: scroll;
+  position: fixed;
+  width: 23vw;
+}
+
 .grid-unknown .grid-item {
-  padding-top: 0.5vw;
-  padding-left: 0.5vw;
+  padding: 0.5vw;
 }
 
 .grid-unknown .grid-photo {

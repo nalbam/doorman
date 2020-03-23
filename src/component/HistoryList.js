@@ -4,21 +4,21 @@ import { API } from 'aws-amplify'
 
 import StackGrid from "react-stack-grid";
 
-import UserItem from './UserItem';
+import HistoryItem from './HistoryItem';
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    this.getUsers();
+    this.getHistory();
   }
 
   state = {
     items: [],
   }
 
-  getUsers = async () => {
-    const res = await API.get('users', '/items/' + this.props.user_type);
+  getHistory = async () => {
+    const res = await API.get('history', '/items/' + this.props.user_id);
     if (res && res.length > 0) {
       let items = res.sort(this.compare).reverse();
 
@@ -28,12 +28,12 @@ class App extends Component {
     } else {
       this.setState({ items: [] });
     }
-    setTimeout(this.getUsers, 5000);
+    setTimeout(this.getHistory, 5000);
   }
 
   compare(a, b) {
-    let a1 = a.latest;
-    let b1 = b.latest;
+    let a1 = a.visited;
+    let b1 = b.visited;
     if (a1 < b1) {
       return -1;
     } else if (a1 > b1) {
@@ -44,7 +44,7 @@ class App extends Component {
 
   render() {
     const list = this.state.items.map(
-      (item, index) => (<UserItem key={index} item={item} user_type={this.props.user_type} />)
+      (item, index) => (<HistoryItem key={index} item={item} user_id={this.props.user_id} />)
     );
 
     return (

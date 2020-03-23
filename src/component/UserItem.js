@@ -6,23 +6,25 @@ class App extends Component {
 
     let thermal = '';
 
-    // if (this.props.item.thermal === 'o') {
-    //   console.log('thermal_url: ' + this.props.item.thermal);
-    //   // https://s3.amazonaws.com/detected/ffee21-c55d2c/1584691059.jpg
-    //   let thermal_url = this.props.item.image_url;
-    //   const regex = /detected\/[a-z0-9-]+/gi;
-    //   thermal_url.replace(regex, 'thermal');
-    //   console.log('thermal_url: ' + thermal_url);
-    //   thermal = <div className='person-thermal'><img src={thermal_url} alt={this.props.item.user_name} /></div>
-    // }
+    if (this.props.item.thermal === 'o') {
+      let thermal_url = '';
+      if (this.props.user_type === 'detected') {
+        thermal_url = this.props.item.image_url.replace(/detected\/[a-z0-9-]+/gi, 'thermal');
+      } else if (this.props.user_type === 'unknown') {
+        thermal_url = this.props.item.image_url.replace(/unknown\/[a-z0-9-]+/gi, 'thermal');
+      }
+      if (thermal_url !== '') {
+        thermal = <div><img src={thermal_url} alt={this.props.item.user_name} className='grid-thermal' /></div>
+      }
+    }
 
     return (
       <Fragment>
-        <div className='person-item'>
+        <li className='grid-item'>
           {thermal}
-          <div><a href={href}><img src={this.props.item.image_url} alt={this.props.item.user_name} className='person-photo' /></a></div>
-          <div className='person-name'>{this.props.item.real_name}</div>
-        </div>
+          <div><a href={href}><img src={this.props.item.image_url} alt={this.props.item.user_name} className='grid-photo' /></a></div>
+          <div className='grid-name'>{this.props.item.real_name}</div>
+        </li>
       </Fragment>
     );
   }
