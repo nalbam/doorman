@@ -36,7 +36,7 @@ footer {
   overflow-y: hidden;
   overflow: scroll;
   position: fixed;
-  width: 41vw;
+  width: 51vw;
 }
 
 .grid-visited>li:nth-child(1) {
@@ -48,7 +48,7 @@ footer {
 }
 
 .grid-visited .grid-photo {
-  width: 40vw;
+  width: 50vw;
 }
 
 .grid-visited .grid-thermal {
@@ -59,20 +59,20 @@ footer {
 .grid-visited .grid-name {
   background-color: #456;
   display: none;
-  width: 40vw;
+  width: 50vw;
 }
 
 .grid-history {
   border: 1px solid #0ac;
   font-size: 2vw;
   height: 99%;
-  left: 42vw;
+  left: 52vw;
   list-style: none;
   overflow-x: hidden;
   overflow-y: hidden;
   overflow: scroll;
   position: fixed;
-  width: 57vw;
+  width: 47vw;
 }
 
 .grid-history>li:nth-child(1) {
@@ -98,7 +98,7 @@ footer {
   background-color: #456;
   display: flex;
   padding: 1vw;
-  width: 30vw;
+  width: 24vw;
 }
 
 .grid-detected {
