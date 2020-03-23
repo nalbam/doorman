@@ -3,6 +3,10 @@
 		"users": {
 			"service": "DynamoDB",
 			"providerPlugin": "awscloudformation"
+		},
+		"history": {
+			"service": "DynamoDB",
+			"providerPlugin": "awscloudformation"
 		}
 	},
 	"function": {
@@ -20,6 +24,21 @@
 					]
 				}
 			]
+		},
+		"history": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"dependsOn": [
+				{
+					"category": "storage",
+					"resourceName": "history",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
 		}
 	},
 	"api": {
@@ -30,6 +49,20 @@
 				{
 					"category": "function",
 					"resourceName": "users",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
+		},
+		"history": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "history",
 					"attributes": [
 						"Name",
 						"Arn"

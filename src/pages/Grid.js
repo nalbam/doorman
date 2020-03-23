@@ -2,8 +2,6 @@ import React, { Component, Fragment } from 'react';
 
 import GridList from '../component/GridList';
 
-import './grid.css';
-
 class App extends Component {
   render() {
     return (

@@ -8,7 +8,7 @@ import AppProvider from './context/AppProvider'
 
 import App from './App';
 import Grid from './pages/Grid'
-import ManageUser from './pages/ManageUser'
+import UserForm from './pages/UserForm'
 
 import Amplify, { Analytics } from 'aws-amplify'
 import awsconfig from './aws-exports'
@@ -24,8 +24,9 @@ const routing = (
     <AppProvider>
         <Router>
             <Switch>
-                <Route exact path='/' component={Grid} />
-                <Route path='/users/:user_id' component={ManageUser} />
+                <Route exact path='/' component={App} />
+                <Route path='/users' component={Grid} />
+                <Route path='/users/:user_id' component={UserForm} />
                 <Route component={App} />
             </Switch>
         </Router>

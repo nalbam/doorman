@@ -1,0 +1,7 @@
+{
+    "tableName": "doorman-history",
+    "partitionKeyName": "user_id",
+    "partitionKeyType": "S",
+    "sortKeyName": "visited",
+    "sortKeyType": "N"
+}

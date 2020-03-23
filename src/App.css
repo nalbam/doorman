@@ -26,7 +26,7 @@ footer {
   color: #555;
 }
 
-.person-detected {
+.grid-detected {
   border: 1px solid #0ac;
   font-size: 2vw;
   height: 99%;
@@ -36,39 +36,61 @@ footer {
   overflow-y: hidden;
   overflow: scroll;
   position: fixed;
-  width: 74%;
+  width: 75vw;
 }
 
-.person-unknown {
+.grid-unknown {
   border: 1px solid #0ac;
   font-size: 1vw;
   height: 99%;
-  left: 75%;
+  left: 76vw;
   list-style: none;
   overflow-x: hidden;
   overflow-y: hidden;
   overflow: scroll;
   position: fixed;
-  width: 24%;
+  width: 23vw;
 }
 
-.person-item {
-  width: 45%;
-  float: left;
-  padding: 5px;
+.grid-detected .grid-item {
+  padding-top: 0.5vw;
+  padding-left: 0.5vw;
 }
 
-.person-photo {
-  width: 100%;
+.grid-detected .grid-photo {
+  width: 36vw;
 }
 
-.person-thermal {
+.grid-detected .grid-thermal {
   position: absolute;
+  width: 10vw;
 }
 
-.person-name {
+.grid-detected .grid-name {
   background-color: #456;
   margin-bottom: 1vw;
+  width: 36vw;
+}
+
+.grid-unknown .grid-item {
+  padding-top: 0.5vw;
+  padding-left: 0.5vw;
+}
+
+.grid-unknown .grid-photo {
+  width: 10vw;
+}
+
+.grid-unknown .grid-thermal {
+  position: absolute;
+  visibility: hidden;
+  width: 5vw;
+}
+
+.grid-unknown .grid-name {
+  background-color: #456;
+  margin-bottom: 0.5vw;
+  width: 10vw;
 }
 
 .logo {

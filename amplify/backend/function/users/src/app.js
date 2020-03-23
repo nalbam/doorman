@@ -6,7 +6,12 @@ or in the "license" file accompanying this file. This file is distributed on an 
 See the License for the specific language governing permissions and limitations under the License.
 */
 
+/* Amplify Params - DO NOT EDIT
+You can access the following resource attributes as environment variables from your Lambda function
+var environment = process.env.ENV
+var region = process.env.REGION
 
+Amplify Params - DO NOT EDIT */
 
 const AWS = require('aws-sdk')
 var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
@@ -67,9 +72,6 @@ app.get(path + hashKeyPath, function (req, res) {
   let queryParams = {
     TableName: tableName,
     FilterExpression: 'image_type = :image_type and latest > :latest',
-    // ExpressionAttributeNames: {
-    //   '#image_type': 'image_type',
-    // },
     ExpressionAttributeValues: {
       ':image_type': image_type,
       ':latest': latest,
