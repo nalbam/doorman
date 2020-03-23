@@ -18,16 +18,21 @@ class App extends Component {
   }
 
   getHistory = async () => {
-    const res = await API.get('history', '/items/' + this.props.user_id);
-    if (res && res.length > 0) {
-      let items = res.sort(this.compare).reverse();
+    console.log('history', this.props.user_id);
 
-      console.log(items)
+    if (this.props.user_id !== '') {
+      const res = await API.get('history', '/items/' + this.props.user_id);
+      console.log('history', res);
 
-      this.setState({ items: items });
-    } else {
-      this.setState({ items: [] });
+      if (res && res.length > 0) {
+        let items = res.sort(this.compare).reverse();
+
+        this.setState({ items: items });
+      } else {
+        this.setState({ items: [] });
+      }
     }
+
     setTimeout(this.getHistory, 5000);
   }
 

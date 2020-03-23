@@ -55,7 +55,43 @@ footer {
 .grid-visited .grid-name {
   background-color: #456;
   margin-bottom: 1vw;
+  visibility: hidden;
   width: 40vw;
+}
+
+.grid-history {
+  border: 1px solid #0ac;
+  font-size: 2vw;
+  height: 99%;
+  left: 42vw;
+  list-style: none;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  overflow: scroll;
+  position: fixed;
+  width: 57vw;
+}
+
+.grid-history .grid-item {
+  display: flex;
+  padding: 0.5vw;
+}
+
+.grid-history .grid-photo {
+  display: flex;
+  width: 10vw;
+}
+
+.grid-history .grid-thermal {
+  display: flex;
+  width: 10vw;
+}
+
+.grid-history .grid-name {
+  background-color: #456;
+  display: flex;
+  padding: 1vw;
+  width: 30vw;
 }
 
 .grid-detected {

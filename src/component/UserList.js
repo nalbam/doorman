@@ -18,16 +18,21 @@ class App extends Component {
   }
 
   getUsers = async () => {
-    const res = await API.get('users', '/items/' + this.props.user_type);
-    if (res && res.length > 0) {
-      let items = res.sort(this.compare).reverse();
+    console.log('users', this.props.user_type);
 
-      console.log(items)
+    if (this.props.user_type !== '') {
+      const res = await API.get('users', '/items/' + this.props.user_type);
+      console.log('users', res);
 
-      this.setState({ items: items });
-    } else {
-      this.setState({ items: [] });
+      if (res && res.length > 0) {
+        let items = res.sort(this.compare).reverse();
+
+        this.setState({ items: items });
+      } else {
+        this.setState({ items: [] });
+      }
     }
+
     setTimeout(this.getUsers, 5000);
   }
 

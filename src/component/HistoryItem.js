@@ -14,10 +14,25 @@ class App extends Component {
       diff = parseInt(diff / (60 * 60 * 24)) + '일 전';
     }
 
+    let thermal = '';
+
+    if (this.props.item.thermal === 'o') {
+      let thermal_url = '';
+      if (this.props.user_type === 'detected') {
+        thermal_url = this.props.item.image_url.replace(/detected\/[a-z0-9-]+/gi, 'thermal');
+      } else {
+        thermal_url = this.props.item.image_url.replace(/unknown\/[a-z0-9-]+/gi, 'thermal');
+      }
+      if (thermal_url !== '') {
+        thermal = <div><img src={thermal_url} alt={this.props.item.visited} className='grid-thermal' /></div>
+      }
+    }
+
     return (
       <Fragment>
         <li className='grid-item'>
-          <div><img src={this.props.item.image_url} alt={this.props.item.user_name} className='grid-photo' /></div>
+          {thermal}
+          <div><img src={this.props.item.image_url} alt={this.props.item.visited} className='grid-photo' /></div>
           <div className='grid-name'>{diff}</div>
         </li>
       </Fragment>
