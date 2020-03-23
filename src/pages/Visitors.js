@@ -31,7 +31,7 @@ class App extends Component {
         let items = res.sort(this.compare).reverse();
 
         this.setState({
-          items: items,
+          items: [items[0]],
           user_id: items[0].user_id,
         });
       }
