@@ -33,7 +33,7 @@ class App extends Component {
       }
     }
 
-    setTimeout(this.getHistory, 5000);
+    setTimeout(this.getHistory, 3000);
   }
 
   compare(a, b) {
