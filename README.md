@@ -8,8 +8,10 @@ npm install -g @aws-amplify/cli
 
 ## amplify
 
-```
+```bash
 amplify init
+# app: doorman
+# env: demo
 
 amplify auth add
 amplify analytics add
