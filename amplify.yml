@@ -1,10 +1,10 @@
 version: 0.1
-# backend:
-#   phases:
-#     build:
-#       commands:
-#         - "# Execute Amplify CLI with the helper script"
-#         - amplifyPush --simple
+backend:
+  phases:
+    build:
+      commands:
+        - "# Execute Amplify CLI with the helper script"
+        - amplifyPush --simple
 frontend:
   phases:
     preBuild:
