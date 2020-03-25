@@ -15,6 +15,8 @@ amplify init
 
 amplify auth add
 amplify analytics add
+amplify push
+
 amplify api add
 amplify push
 
