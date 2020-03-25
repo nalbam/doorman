@@ -67,7 +67,7 @@ app.get(path + hashKeyPath, function (req, res) {
   console.log(`scan: ${JSON.stringify(req.params)}`);
 
   let image_type = req.params['user_id'];
-  let latest = Date.now() - (15 * 60 * 1000);
+  let latest = Date.now() - (30 * 60 * 1000);
 
   let queryParams = {
     TableName: tableName,
@@ -85,6 +85,7 @@ app.get(path + hashKeyPath, function (req, res) {
       res.statusCode = 500;
       res.json({ error: 'Could not load items: ' + err });
     } else {
+      console.log('scan: ' + data.Items.length);
       res.json(data.Items);
     }
   });

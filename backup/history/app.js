@@ -67,12 +67,14 @@ app.get(path + hashKeyPath, function (req, res) {
   console.log(`scan: ${JSON.stringify(req.params)}`);
 
   let user_id = req.params['user_id'];
+  let visited = Date.now() - (31 * 24 * 60 * 60 * 1000);
 
   let queryParams = {
     TableName: tableName,
-    FilterExpression: 'user_id = :user_id',
+    FilterExpression: 'user_id = :user_id and visited > :visited',
     ExpressionAttributeValues: {
       ':user_id': user_id,
+      ':visited': visited,
     },
   }
 
@@ -83,6 +85,7 @@ app.get(path + hashKeyPath, function (req, res) {
       res.statusCode = 500;
       res.json({ error: 'Could not load items: ' + err });
     } else {
+      console.log('scan: ' + data.Items.length);
       res.json(data.Items);
     }
   });
