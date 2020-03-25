@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 
 class App extends Component {
   render() {
-    let diff = (Date.now() - this.props.item.visited) / 1000;
+    let diff = (Date.now() - this.props.item.latest) / 1000;
 
     if (diff < 60) {
       diff = parseInt(diff) + '초 전';

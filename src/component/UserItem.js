@@ -4,6 +4,24 @@ class App extends Component {
   render() {
     let href = `/users/${this.props.item.user_id}`;
 
+    let diff = (Date.now() - this.props.item.latest) / 1000;
+
+    if (diff < 60) {
+      diff = parseInt(diff) + '초 전';
+    } else if (diff < 60 * 60) {
+      diff = parseInt(diff / 60) + '분 전';
+    } else if (diff < 60 * 60 * 24) {
+      diff = parseInt(diff / (60 * 60)) + '시간 전';
+    } else {
+      diff = parseInt(diff / (60 * 60 * 24)) + '일 전';
+    }
+
+    let temp = '';
+
+    if (this.props.item.temperature) {
+      temp = ` (${this.props.item.temperature}) `;
+    }
+
     let thermal = '';
 
     if (this.props.item.thermal === 'o') {
@@ -33,6 +51,7 @@ class App extends Component {
           {thermal}
           <div><a href={href}><img src={this.props.item.image_url} alt={this.props.item.user_name} className='grid-photo' /></a></div>
           <div className='grid-name'>{this.props.item.real_name}</div>
+          <div className='grid-info'>{diff} {temp}</div>
         </li>
       </Fragment>
     );
