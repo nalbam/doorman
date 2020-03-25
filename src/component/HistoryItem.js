@@ -14,6 +14,12 @@ class App extends Component {
       diff = parseInt(diff / (60 * 60 * 24)) + '일 전';
     }
 
+    let temp = '';
+
+    if (this.props.item.temperature) {
+      temp = ` (${this.props.item.temperature}) `;
+    }
+
     let thermal = '';
 
     if (this.props.item.thermal === 'o') {
@@ -42,7 +48,7 @@ class App extends Component {
         <li className='grid-item'>
           {thermal}
           <div><img src={this.props.item.image_url} alt={this.props.item.visited} className='grid-photo' /></div>
-          <div className='grid-name'>{diff}</div>
+          <div className='grid-name'>{diff} {temp}</div>
         </li>
       </Fragment>
     );
