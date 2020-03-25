@@ -31,6 +31,8 @@ class App extends Component {
       } else {
         this.setState({ items: [] });
       }
+    } else {
+      this.setState({ items: [] });
     }
 
     setTimeout(this.getHistory, 3000);
