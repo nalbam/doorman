@@ -17,7 +17,8 @@ amplify auth add
 amplify analytics add
 amplify push
 
-amplify api add
+amplify api add # users
+amplify api add # history
 amplify push
 
 amplify hosting add
