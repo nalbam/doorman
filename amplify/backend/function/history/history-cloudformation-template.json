@@ -71,7 +71,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-doorman-demo-143441-deployment",
-					"S3Key": "amplify-builds/history-4a4d554f5a71472f687a-build.zip"
+					"S3Key": "amplify-builds/history-767067677239322b6955-build.zip"
 				}
 			}
 		},
