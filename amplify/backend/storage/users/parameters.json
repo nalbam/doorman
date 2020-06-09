@@ -1,5 +1,0 @@
-{
-    "tableName": "doorman-users",
-    "partitionKeyName": "user_id",
-    "partitionKeyType": "S"
-}

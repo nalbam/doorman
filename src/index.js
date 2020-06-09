@@ -7,8 +7,6 @@ import * as serviceWorker from './serviceWorker';
 import AppProvider from './context/AppProvider'
 
 import App from './App';
-import UserForm from './pages/UserForm'
-import Users from './pages/Users'
 import Visitors from './pages/Visitors'
 
 import Amplify, { Analytics } from 'aws-amplify'
@@ -27,8 +25,6 @@ const routing = (
             <Switch>
                 <Route exact path='/' component={Visitors} />
                 <Route path='/visitors' component={Visitors} />
-                <Route path='/users/:user_id' component={UserForm} />
-                <Route path='/users' component={Users} />
                 <Route component={App} />
             </Switch>
         </Router>

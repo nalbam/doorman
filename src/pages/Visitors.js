@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from 'react';
 
-import { API } from 'aws-amplify'
+// import { API } from 'aws-amplify'
 
 import StackGrid from "react-stack-grid";
 
 import UserItem from '../component/UserItem';
-import HistoryList from '../component/HistoryList';
+import HistoryItem from '../component/HistoryItem';
 
 class App extends Component {
   constructor(props) {
@@ -15,62 +15,54 @@ class App extends Component {
   }
 
   state = {
-    user_id: "",
-    user_type: "unknown",
-    items: [],
+    users: [],
+    history: [],
   }
 
   getUsers = async () => {
-    console.log('users', this.state.user_type);
+    const apiName = 'https://zio9pumsm3.execute-api.ap-northeast-2.amazonaws.com'
+    const path = `/demo/users`
 
-    if (this.state.user_type !== '') {
-      const res = await API.get('users', '/items/' + this.state.user_type);
-      console.log('users', res);
-
-      if (res && res.length > 0) {
-        let items = res.sort(this.compare).reverse();
-
-        this.setState({
-          items: [items[0]],
-          user_id: items[0].user_id,
-        });
-      }
-      else {
-        this.setState({
-          items: [],
-          user_id: "",
-        });
-      }
-    }
+    fetch(`${apiName}${path}`)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            users: result.users,
+            history: result.history,
+          });
+        },
+        (error) => {
+          this.setState({
+            users: [],
+            history: [],
+          });
+        }
+      );
 
     setTimeout(this.getUsers, 5000);
   }
 
-  compare(a, b) {
-    let a1 = a.latest;
-    let b1 = b.latest;
-    if (a1 < b1) {
-      return -1;
-    } else if (a1 > b1) {
-      return 1;
-    }
-    return 0;
-  }
-
   render() {
-    const list = this.state.items.map(
-      (item, index) => (<UserItem key={index} item={item} user_type={this.state.user_type} />)
+    const users = this.state.users.map(
+      (item, index) => (<UserItem key={index} item={item} />)
+    );
+
+    const history = this.state.history.map(
+      (item, index) => (<HistoryItem key={index} item={item} />)
     );
 
     return (
       <Fragment>
-        <div className='grid-visited'>
+        <div className='grid-user'>
           <StackGrid columnWidth="100%">
-            {list}
+            {users}
           </StackGrid>
         </div>
         <div className='grid-history'>
-          <HistoryList user_id={this.state.user_id} grid_width="100%" />
+          <StackGrid columnWidth="100%">
+            {history}
+          </StackGrid>
         </div>
       </Fragment>
     );

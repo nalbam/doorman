@@ -30,8 +30,8 @@ if (process.env.ENV && process.env.ENV !== "NONE") {
 const userIdPresent = false; // TODO: update in case is required to use that definition
 const partitionKeyName = "user_id";
 const partitionKeyType = "S";
-const sortKeyName = "";
-const sortKeyType = "";
+const sortKeyName = "latest";
+const sortKeyType = "N";
 const hasSortKey = sortKeyName !== "";
 const path = "/items";
 const UNAUTH = 'UNAUTH';
@@ -67,7 +67,7 @@ app.get(path + hashKeyPath, function (req, res) {
   console.log(`scan: ${JSON.stringify(req.params)}`);
 
   let image_type = req.params['user_id'];
-  let latest = Date.now() - (30 * 60 * 1000);
+  let latest = Date.now() - (60 * 60 * 1000);
 
   let queryParams = {
     TableName: tableName,

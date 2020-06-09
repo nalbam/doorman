@@ -26,7 +26,7 @@ footer {
   color: #555;
 }
 
-.grid-visited {
+.grid-user {
   border: 1px solid #0ac;
   font-size: 2vw;
   height: 99%;
@@ -39,24 +39,24 @@ footer {
   width: 51vw;
 }
 
-.grid-visited>li:nth-child(1) {
+.grid-user>li:nth-child(1) {
   padding-top: 0.5vw;
 }
 
-.grid-visited .grid-item {
+.grid-user .grid-item {
   padding-left: 0.5vw;
 }
 
-.grid-visited .grid-photo {
+.grid-user .grid-photo {
   width: 50vw;
 }
 
-.grid-visited .grid-thermal {
+.grid-user .grid-thermal {
   position: absolute;
   width: 10vw;
 }
 
-.grid-visited .grid-name {
+.grid-user .grid-name {
   background-color: #456;
   display: none;
   width: 50vw;
@@ -99,79 +99,6 @@ footer {
   display: flex;
   padding: 1vw;
   width: 24vw;
-}
-
-.grid-detected {
-  border: 1px solid #0ac;
-  font-size: 2vw;
-  height: 99%;
-  left: 0;
-  list-style: none;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  overflow: scroll;
-  position: fixed;
-  width: 75vw;
-}
-
-.grid-detected>li:nth-child(1) {
-  padding-top: 0.5vw;
-}
-
-.grid-detected .grid-item {
-  padding-left: 0.5vw;
-}
-
-.grid-detected .grid-photo {
-  width: 36vw;
-}
-
-.grid-detected .grid-thermal {
-  position: absolute;
-  width: 10vw;
-}
-
-.grid-detected .grid-name {
-  background-color: #456;
-  margin-bottom: 1vw;
-  width: 36vw;
-}
-
-.grid-unknown {
-  border: 1px solid #0ac;
-  font-size: 1vw;
-  height: 99%;
-  left: 76vw;
-  list-style: none;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  overflow: scroll;
-  position: fixed;
-  width: 23vw;
-}
-
-.grid-unknown>li:nth-child(1) {
-  padding-top: 0.5vw;
-}
-
-.grid-unknown .grid-item {
-  padding-left: 0.5vw;
-}
-
-.grid-unknown .grid-photo {
-  width: 10vw;
-}
-
-.grid-unknown .grid-thermal {
-  position: absolute;
-  visibility: hidden;
-  width: 5vw;
-}
-
-.grid-unknown .grid-name {
-  background-color: #456;
-  margin-bottom: 0.5vw;
-  width: 10vw;
 }
 
 .logo {
